@@ -1,16 +1,4 @@
-//when user clicks Generate Password button, 
-//prompt user for passwd length, 8-128 chars
-//store reply in `passwdlen` variable
-//prompt user for character sets to include in password:
-//  include lower case?
-//  include upper case?
-//  include numbers?
-//  include special characters?
-//VALIDATE at least one of the 4 sets was selected.
-//GENERATE PASSWORD using array built of characters selected up to length provided.
-//DISPLAY password to console or screen
-
-//SET CONSTANTS AND GLOBAL VARIABLES
+//SET GLOBAL VARIABLES
 var alphaUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var alphaLower = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -20,6 +8,13 @@ var password = "";
 var passwdlen = 0;
 var getRandom = 0;
 var reply = "z";
+var charsets = {
+  uc: true,
+  lc: true,
+  sc: true,
+  num: true,
+  numOfSets: 4
+};
 
 // VERIFY VARIABLES/ARRAYS
 // console.log(alphaLower);
@@ -30,18 +25,10 @@ var reply = "z";
 // console.log(passwdlen);
 
 //Prompt user for how long the password should be, btwn 8-128 chars
-while (passwdlen <= 8 || passwdlen > 128) {
+while (passwdlen < 8 || passwdlen > 128) {
   passwdlen = prompt("Please enter a length for your password between 8-128 characters: ");
   console.log(passwdlen);
 }
-
-var charsets = {
-  uc: true,
-  lc: true,
-  sc: true,
-  num: true,
-  numOfSets: 4
-};
 
 // VERIFY INITIAL CHARACTER SET SELECTED VALUES
 // console.log(charsets.uc);
