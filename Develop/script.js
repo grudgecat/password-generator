@@ -21,12 +21,13 @@ var passwdlen = 0;
 var getRandom = 0;
 var reply = "z";
 
-console.log(alphaLower);
-console.log(alphaUpper);
-console.log(numbers);
-console.log(specialChars);
-console.log(password);
-console.log(passwdlen);
+// VERIFY VARIABLES/ARRAYS
+// console.log(alphaLower);
+// console.log(alphaUpper);
+// console.log(numbers);
+// console.log(specialChars);
+// console.log(password);
+// console.log(passwdlen);
 
 //Prompt user for how long the password should be, btwn 8-128 chars
 while (passwdlen <= 8 || passwdlen > 128) {
@@ -42,11 +43,12 @@ var charsets = {
   numOfSets: 4
 };
 
-console.log(charsets.uc);
-console.log(charsets.lc);
-console.log(charsets.sc);
-console.log(charsets.num);
-console.log(charsets.numOfSets);
+// VERIFY INITIAL CHARACTER SET SELECTED VALUES
+// console.log(charsets.uc);
+// console.log(charsets.lc);
+// console.log(charsets.sc);
+// console.log(charsets.num);
+// console.log(charsets.numOfSets);
 
 //prompt user - use upper case?
 while ((reply !== "y") && (reply !== "n")) {
@@ -62,9 +64,10 @@ else {
   passwdCharSet.push(...alphaUpper);
 }
 
-console.log(charsets.uc);
-console.log(charsets.numOfSets);
-console.log(passwdCharSet);
+// VERIFY VARIABLE VALUES
+// console.log(charsets.uc);
+// console.log(charsets.numOfSets);
+// console.log(passwdCharSet);
 
 //prompt user - use lower case?
 reply = "z";
@@ -81,9 +84,10 @@ while ((reply !== "y") && (reply !== "n")) {
     passwdCharSet.push(...alphaLower);
   }
 
-console.log(charsets.lc);
-console.log(charsets.numOfSets);
-console.log(passwdCharSet);
+  // VERIFY VARIABLE VALUES
+// console.log(charsets.lc);
+// console.log(charsets.numOfSets);
+// console.log(passwdCharSet);
 
 //prompt user - use special chars?
 reply = "z";
@@ -100,9 +104,10 @@ while ((reply !== "y") && (reply !== "n")) {
     passwdCharSet.push(...specialChars);
   }
 
-console.log(charsets.sc);
-console.log(charsets.numOfSets);
-console.log(passwdCharSet);
+// VERIFY VARIABLE VALUES
+// console.log(charsets.sc);
+// console.log(charsets.numOfSets);
+// console.log(passwdCharSet);
 
 //prompt user - use numbers?
 reply = "z";
@@ -119,20 +124,23 @@ while ((reply !== "y") && (reply !== "n")) {
     passwdCharSet.push(...numbers);
   }
 
-console.log(charsets.num);
-console.log(charsets.numOfSets);
-console.log(passwdCharSet);
+  // VERIFY VARIABLE VALUES
+// console.log(charsets.num);
+// console.log(charsets.numOfSets);
+// console.log(passwdCharSet);
 
-console.log(passwdCharSet.length);
+//VERIFY CARACTER SET LENGTH
+// console.log(passwdCharSet.length);
 
 if (charsets.numOfSets === 0) {
   alert("You have not selected any character sets, please try again.");
 }
 else {
-   //generate password
+   //CALL generate password
   //display password
 }
 
+//CODE TO GENERATE PASSWORD STRING
 var i;
 for(i = 0; i < passwdlen; i++) {
   getRandom = Math.floor((Math.random() * passwdCharSet.length));
@@ -142,10 +150,8 @@ for(i = 0; i < passwdlen; i++) {
   // console.log(getRandom);
 }
 
+//CONSOLE LOGS PASSWORD STRING
 console.log(password);
-
-
-
 
 // Assignment Code
 // var generateBtn = document.querySelector("#generate");
