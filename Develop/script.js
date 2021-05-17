@@ -128,27 +128,31 @@ else {
 }
 
 //CODE TO GENERATE PASSWORD STRING
+function generatePassword() { 
+password = "";
 var i;
-for(i = 0; i < passwdlen; i++) {
-  getRandom = Math.floor((Math.random() * passwdCharSet.length));
-  // console.log(passwdCharSet[getRandom]);
-  password = password + passwdCharSet[getRandom];
-  // console.log(passwdCharSet.length);
-  // console.log(getRandom);
+  for(i = 0; i < passwdlen; i++) {
+    getRandom = Math.floor((Math.random() * passwdCharSet.length));
+    // console.log(passwdCharSet[getRandom]);
+    password = password + passwdCharSet[getRandom];
+    // console.log(passwdCharSet.length);
+    // console.log(getRandom);
+  }
+return password;
 }
 
 //CONSOLE LOGS PASSWORD STRING
 console.log(password);
 
 // Assignment Code
-// var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
 
 // // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-//   passwordText.value = password;
-// }
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
+}
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
