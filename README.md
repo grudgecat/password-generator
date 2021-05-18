@@ -16,4 +16,4 @@ VALIDATE at least one of the 4 sets was selected, \
 IF counter reaches zero, display alert error to user, unable to generate password and end. \
 ELSE generate character set array, concat all arrays where charset include values are true into `passwordCharSet` array. \
 GENERATE PASSWORD using array built of characters selected up to length provided. \
-DISPLAY password to console or screen. 
+DISPLAY password to screen. 
