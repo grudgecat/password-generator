@@ -8,7 +8,7 @@ Creation date: May 2021
 Collaborators: Sheri Elgin
 
 ## Screen Cap
-
+![screen cap of Password Generator](./assets/screencap.png )
 
 ## Project Links
 GitHub Source Code: https://github.com/grudgecat/password-generator
