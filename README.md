@@ -8,10 +8,10 @@ Creation date: May 2021
 Collaborators: Sheri Elgin
 
 ## Screen Cap
-![screen cap of Password Generator](./assets/screencap.png )
+![screen cap of Password Generator](./Assets/screencap.png )
 
 ## Project Links
-GitHub Source Code: https://github.com/grudgecat/password-generator
+GitHub Source Code: https://github.com/grudgecat/password-generator \
 Site URL/Pages link: https://grudgecat.github.io/password-generator/
 
  
@@ -33,4 +33,4 @@ ELSE generate character set array, concat all arrays where charset include value
 GENERATE PASSWORD using array built of characters selected up to length provided. \
 DISPLAY password to screen. 
 
-## Notes
+
