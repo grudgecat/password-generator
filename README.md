@@ -1,5 +1,19 @@
-# password-generator
+# TITLE: PASSWORD GENERATOR
+
+## Project Title: password-generator
+Purpose: 
+
+Creation date: May 2021
+Collaborators: Sheri Elgin
+
+## Screen Cap
+
+## Project Links
+GitHub Source Code: https://github.com/grudgecat/password-generator
+Site URL/Pages link: 
+
  
+## Expected Behavior 
 _Pseudocode/Expected bevhavior:_ \
 When user CLICKS Generate Password button, \
 PROMPT user for passwd length, 8-128 chars, \
@@ -9,7 +23,6 @@ PROMPT user for character sets to include in password:
  * include upper case?
  * include numbers?
  * include special characters? 
-
 STORE replies in `charsets` object, \
 IF reply is NO, do not include, then set `charsets` value to false & decrement counter, \
 VALIDATE at least one of the 4 sets was selected, \
@@ -17,3 +30,5 @@ IF counter reaches zero, display alert error to user, unable to generate passwor
 ELSE generate character set array, concat all arrays where charset include values are true into `passwordCharSet` array. \
 GENERATE PASSWORD using array built of characters selected up to length provided. \
 DISPLAY password to screen. 
+
+## Notes
