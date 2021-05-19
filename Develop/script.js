@@ -23,17 +23,20 @@ var charsets = {
 
   //prompt user - uppercase?
   reply = "z";
-  while ((reply !== "y") && (reply !== "n")) {
-    reply = prompt("Do you want to use Upper Case Letters? y or n");
-  if (reply === 'n') {
-    charsets.uc = false;
-    charsets.numOfSets = charsets.numOfSets - 1;
-    // charsets.numOfSets -=;
-  }
-  else {
-    passwdCharSet.push(...alphaUpper);
-  }
-  }
+    while ((reply !== "y") && (reply !== "n")) {
+      reply = prompt("Do you want to use Upper Case Letters? y or n");
+      if ((reply !== "y") && (reply !== "n")) {
+        alert("Please enter only 'y' or 'n' in the reply box.");
+      }
+    }
+    if (reply === 'n') {
+      charsets.uc = false;
+      charsets.numOfSets = charsets.numOfSets - 1;
+      // charsets.numOfSets --;
+    }
+    else {
+      passwdCharSet.push(...alphaUpper);
+    }
 
   //VERIFY VARIABLE VALUES
   console.log(charsets.uc);
@@ -44,15 +47,19 @@ var charsets = {
   reply = "z";
   while ((reply !== "y") && (reply !== "n")) {
     reply = prompt("Do you want to use Lower Case Letters? y or n");
+    if ((reply !== "y") && (reply !== "n")) {
+      alert("Please enter only 'y' or 'n' in the reply box.");
     }
+  }
     if (reply === 'n') {
       charsets.lc = false;
       charsets.numOfSets = charsets.numOfSets - 1;
-      // charsets.numOfSets -=;
+      // charsets.numOfSets --;
     }
     else {
       passwdCharSet.push(...alphaLower);
     }
+  
 
   //VERIFY VARIABLE VALUES
   console.log(charsets.uc);
@@ -63,16 +70,20 @@ var charsets = {
   reply = "z";
   while ((reply !== "y") && (reply !== "n")) {
     reply = prompt("Do you want to use Special Characters? y or n");
-    console.log(reply);
+    if ((reply !== "y") && (reply !== "n")) {
+      alert("Please enter only 'y' or 'n' in the reply box.");
     }
+  }
+    console.log(reply);
     if (reply === 'n') {
       charsets.sc = false;
       charsets.numOfSets = charsets.numOfSets - 1;
-      // charsets.numOfSets -=;
+      // charsets.numOfSets --;
     }
     else {
       passwdCharSet.push(...specialChars);
     }
+  
 
   //VERIFY VARIABLE VALUES
   console.log(charsets.uc);
@@ -83,15 +94,23 @@ var charsets = {
   reply = "z";
   while ((reply !== "y") && (reply !== "n")) {
     reply = prompt("Do you want to use Numbers? y or n");
+    if ((reply !== "y") && (reply !== "n")) {
+      alert("Please enter only 'y' or 'n' in the reply box.");
     }
+  }
     if (reply === 'n') {
       charsets.num = false;
       charsets.numOfSets = charsets.numOfSets - 1;
-      // charsets.numOfSets -=;
+      // charsets.numOfSets --;
     }
     else {
       passwdCharSet.push(...numbers);
     }
+
+  //VERIFY VARIABLE VALUES
+  console.log(charsets.uc);
+  console.log(charsets.numOfSets);
+  console.log(passwdCharSet);
 
 //CODE TO GENERATE PASSWORD STRING
 function generatePassword() {
@@ -99,7 +118,6 @@ function generatePassword() {
   var i;
   for(i = 0; i < passwdlen; i++) {
     getRandom = Math.floor((Math.random() * passwdCharSet.length));
-    // console.log(passwdCharSet[getRandom]);
     password = password + passwdCharSet[getRandom];
   }
   return password;
@@ -118,22 +136,10 @@ function writePassword() {
   else {
      //CALL generate password to create and display password
      var password = generatePassword();
-     console.log("inside fxn: " + password);
      var passwordText = document.querySelector("#password");
      passwordText.value = password;
   }
-//moved code up one level  
 }
 
 // // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// // // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-//   passwordText.value = password;
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
