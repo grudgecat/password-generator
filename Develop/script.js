@@ -16,110 +16,97 @@ var charsets = {
   numOfSets: 4
 };
 
-  //Prompt user for how long the password should be, btwn 8-128 chars
-  while ((passwdlen < 8 || passwdlen > 128) || isNaN(passwdlen)) {
-    passwdlen = prompt("Please enter a length for your password between 8-128 characters: ");
-  }
-
-  //prompt user - uppercase?
-  reply = "z";
-    while ((reply !== "y") && (reply !== "n")) {
-      reply = prompt("Do you want to use Upper Case Letters? y or n");
-      if ((reply !== "y") && (reply !== "n")) {
-        alert("Please enter only 'y' or 'n' in the reply box.");
-      }
-    }
-    if (reply === 'n') {
-      charsets.uc = false;
-      charsets.numOfSets = charsets.numOfSets - 1;
-      // charsets.numOfSets --;
-    }
-    else {
-      passwdCharSet.push(...alphaUpper);
-    }
-
-  //VERIFY VARIABLE VALUES
-  console.log(charsets.uc);
-  console.log(charsets.numOfSets);
-  console.log(passwdCharSet);
-
-  //prompt user - use lower case?
-  reply = "z";
-  while ((reply !== "y") && (reply !== "n")) {
-    reply = prompt("Do you want to use Lower Case Letters? y or n");
-    if ((reply !== "y") && (reply !== "n")) {
-      alert("Please enter only 'y' or 'n' in the reply box.");
-    }
-  }
-    if (reply === 'n') {
-      charsets.lc = false;
-      charsets.numOfSets = charsets.numOfSets - 1;
-      // charsets.numOfSets --;
-    }
-    else {
-      passwdCharSet.push(...alphaLower);
-    }
-  
-
-  //VERIFY VARIABLE VALUES
-  console.log(charsets.uc);
-  console.log(charsets.numOfSets);
-  console.log(passwdCharSet);
-
-  //prompt user - use special chars?
-  reply = "z";
-  while ((reply !== "y") && (reply !== "n")) {
-    reply = prompt("Do you want to use Special Characters? y or n");
-    if ((reply !== "y") && (reply !== "n")) {
-      alert("Please enter only 'y' or 'n' in the reply box.");
-    }
-  }
-    console.log(reply);
-    if (reply === 'n') {
-      charsets.sc = false;
-      charsets.numOfSets = charsets.numOfSets - 1;
-      // charsets.numOfSets --;
-    }
-    else {
-      passwdCharSet.push(...specialChars);
-    }
-  
-
-  //VERIFY VARIABLE VALUES
-  console.log(charsets.uc);
-  console.log(charsets.numOfSets);
-  console.log(passwdCharSet);
-
-  //prompt user - use numbers?
-  reply = "z";
-  while ((reply !== "y") && (reply !== "n")) {
-    reply = prompt("Do you want to use Numbers? y or n");
-    if ((reply !== "y") && (reply !== "n")) {
-      alert("Please enter only 'y' or 'n' in the reply box.");
-    }
-  }
-    if (reply === 'n') {
-      charsets.num = false;
-      charsets.numOfSets = charsets.numOfSets - 1;
-      // charsets.numOfSets --;
-    }
-    else {
-      passwdCharSet.push(...numbers);
-    }
-
-  //VERIFY VARIABLE VALUES
-  console.log(charsets.uc);
-  console.log(charsets.numOfSets);
-  console.log(passwdCharSet);
-
-//CODE TO GENERATE PASSWORD STRING
+//FUNCTION TO GENERATE PASSWORD STRING
 function generatePassword() {
+
+//Prompt user for how long the password should be, btwn 8-128 chars
+while ((passwdlen < 8 || passwdlen > 128) || isNaN(passwdlen)) {
+  passwdlen = prompt("Please enter a length for your password between 8-128 characters: ");
+}
+
+//prompt user - uppercase?
+reply = "z";
+  while ((reply !== "y") && (reply !== "n")) {
+    reply = prompt("Do you want to use Upper Case Letters? y or n");
+    if ((reply !== "y") && (reply !== "n")) {
+      alert("Please enter only 'y' or 'n' in the reply box.");
+    }
+  }
+  if (reply === 'n') {
+    charsets.uc = false;
+    charsets.numOfSets = charsets.numOfSets - 1;
+    // charsets.numOfSets --;
+  }
+  else {
+    passwdCharSet.push(...alphaUpper);
+  }
+
+//prompt user - use lower case?
+reply = "z";
+while ((reply !== "y") && (reply !== "n")) {
+  reply = prompt("Do you want to use Lower Case Letters? y or n");
+  if ((reply !== "y") && (reply !== "n")) {
+    alert("Please enter only 'y' or 'n' in the reply box.");
+  }
+}
+  if (reply === 'n') {
+    charsets.lc = false;
+    charsets.numOfSets = charsets.numOfSets - 1;
+    // charsets.numOfSets --;
+  }
+  else {
+    passwdCharSet.push(...alphaLower);
+  }
+
+//prompt user - use special chars?
+reply = "z";
+while ((reply !== "y") && (reply !== "n")) {
+  reply = prompt("Do you want to use Special Characters? y or n");
+  if ((reply !== "y") && (reply !== "n")) {
+    alert("Please enter only 'y' or 'n' in the reply box.");
+  }
+}
+  console.log(reply);
+  if (reply === 'n') {
+    charsets.sc = false;
+    charsets.numOfSets = charsets.numOfSets - 1;
+    // charsets.numOfSets --;
+  }
+  else {
+    passwdCharSet.push(...specialChars);
+  }
+
+//prompt user - use numbers?
+reply = "z";
+while ((reply !== "y") && (reply !== "n")) {
+  reply = prompt("Do you want to use Numbers? y or n");
+  if ((reply !== "y") && (reply !== "n")) {
+    alert("Please enter only 'y' or 'n' in the reply box.");
+  }
+}
+  if (reply === 'n') {
+    charsets.num = false;
+    charsets.numOfSets = charsets.numOfSets - 1;
+    // charsets.numOfSets --;
+  }
+  else {
+    passwdCharSet.push(...numbers);
+  }
+
   password = "";
   var i;
   for(i = 0; i < passwdlen; i++) {
     getRandom = Math.floor((Math.random() * passwdCharSet.length));
     password = password + passwdCharSet[getRandom];
   }
+  //reset user prompt conditions
+ charsets = {
+    uc: true,
+    lc: true,
+    sc: true,
+    num: true,
+    numOfSets: 4
+  };
   return password;
 }
 

@@ -1,16 +1,18 @@
 # TITLE: PASSWORD GENERATOR
 
 ## Project Title: password-generator
-Purpose: 
+Purpose: This project was created to explore vanilla JavaScript. New skills learned included creation and linking of script files, variables, functions, arrays, JavaScript objects and methods. \
+The project is a working password generator which allows the user to select password criteria and length between 8-128 characters to return a strong, randomized password.
 
 Creation date: May 2021
 Collaborators: Sheri Elgin
 
 ## Screen Cap
 
+
 ## Project Links
 GitHub Source Code: https://github.com/grudgecat/password-generator
-Site URL/Pages link: 
+Site URL/Pages link: https://grudgecat.github.io/password-generator/
 
  
 ## Expected Behavior 
